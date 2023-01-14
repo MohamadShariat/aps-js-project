@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MohamadShariat/aps-js-project.git"
+    "url": "git+https://github.com/Mohammad-Shariat/aps-js-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MohamadShariat/aps-js-project/issues"
+    "url": "https://github.com/Mohammad-Shariat/aps-js-project/issues"
   },
-  "homepage": "https://github.com/MohamadShariat/aps-js-project#readme"
+  "homepage": "https://github.com/Mohammad-Shariat/aps-js-project#readme"
 }
