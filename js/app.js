@@ -1,6 +1,8 @@
 const BASE_URL = 'https://fakestoreapi.com/products';
 let products = [];
 const mainContainer = document.querySelector('.main-container');
+const menuButton = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-nav');
 
 // getting products
 const getProducts = async () => {
@@ -15,6 +17,12 @@ const getProducts = async () => {
 };
 
 getProducts();
+
+// hamburger menu
+menuButton.addEventListener('click', () => {
+  menuButton.classList.toggle('is-active');
+  mobileMenu.classList.toggle('is-active');
+});
 
 // make UI
 const displayProducts = products => {
