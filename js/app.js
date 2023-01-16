@@ -9,7 +9,7 @@ const getProducts = async () => {
   try {
     const res = await fetch(BASE_URL);
     products = await res.json();
-    // console.log(products);
+    console.log(products);
     displayProducts(products);
   } catch (err) {
     console.error(err);
