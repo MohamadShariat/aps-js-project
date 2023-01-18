@@ -52,23 +52,37 @@
         </nav>
     </header>
 
-    <body>
+    <main class="main-contact">
+        <form class="contact-form" action="">
+            <label for="firstName"></label>
+            <input id="firstName" type="text" placeholder="First name">
+            <label for="lastName"></label>
+            <input id="lastName" type="text" placeholder="Last name">
+            <label for="phoneNumber"></label>
+            <input id="phoneNumber" type="number" placeholder="Phone number">
+            <label for="emailAddress"></label>
+            <input id="emailAddress" type="email" placeholder="Email address">
+            <label for="textaria"></label>
+            <textarea name="textarea" id="textarea" placeholder="Your message"></textarea>
+            <button class="">Submit</button>
+        </form>
+    </main>
 
-        <footer class="contact-footer">
-            <h3>Made by Mohammad Shariat</h3>
-            <div class="social">
-                <a href="https://github.com/Mohammad-Shariat" target="_blank"><i class=" fab fa-github fa-2x"></i></a>
-                <a href="https://t.me/MShariat" target="_blank"><i class="fab fa-telegram fa-2x"></i></a>
-                <a href="https://instagram.com/Mohamad_Shariat" target="_blank"><i
-                        class="fab fa-instagram fa-2x"></i></a>
-                <a href="https://linkedin.com/in/mohammad-shariatahmadi/" target="_blank"><i
-                        class="fab fa-linkedin fa-2x"></i></a>
-            </div>
-            <p>
-                &copy; <span id="currentYear"></span> APS Market
-            </p>
-        </footer>
-        <script src="../js/app.js"></script>
-    </body>
+
+    <footer class="contact-footer">
+        <h3>Made by Mohammad Shariat</h3>
+        <div class="social">
+            <a href="https://github.com/Mohammad-Shariat" target="_blank"><i class=" fab fa-github fa-2x"></i></a>
+            <a href="https://t.me/MShariat" target="_blank"><i class="fab fa-telegram fa-2x"></i></a>
+            <a href="https://instagram.com/Mohamad_Shariat" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://linkedin.com/in/mohammad-shariatahmadi/" target="_blank"><i
+                    class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>
+            &copy; <span id="currentYear"></span> APS Market
+        </p>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
 
 </html>
