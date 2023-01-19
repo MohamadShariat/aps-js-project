@@ -9,7 +9,6 @@ const getProducts = async () => {
   try {
     const res = await fetch(BASE_URL);
     products = await res.json();
-    console.log(products);
     displayProducts(products);
   } catch (err) {
     console.error(err);
@@ -17,6 +16,7 @@ const getProducts = async () => {
 };
 
 getProducts();
+endLoading();
 
 // hamburger menu
 menuButton.addEventListener('click', () => {
@@ -28,10 +28,9 @@ menuButton.addEventListener('click', () => {
 const displayProducts = products => {
   const htmlString = products
     .map(product => {
-      console.log(product);
       return `
       <div class='card'>
-       <img class='card-image' src=${product.image}></img>
+       <img class='card-image' src=${product.image} loading='lazy'></img>
        <div class='card-description'>
         <h4>${product.title}</h4>
         <p>Category: ${product.category}</p>
@@ -45,6 +44,19 @@ const displayProducts = products => {
     .join('');
   mainContainer.innerHTML = htmlString;
 };
+
+// loader
+function endLoading() {
+  window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+
+    loader.classList.add('loader-hidden');
+
+    // loader.addEventListener('transitionend', () => {
+    //   document.body.removeChild(loader);
+    // });
+  });
+}
 
 // Get the current year for footer
 const year = document.querySelector('#currentYear');
