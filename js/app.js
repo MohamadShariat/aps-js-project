@@ -3,6 +3,7 @@ let products = [];
 const mainContainer = document.querySelector('.main-container');
 const menuButton = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-nav');
+const loader = document.querySelector('.loader');
 
 // getting products
 const getProducts = async () => {
@@ -10,13 +11,13 @@ const getProducts = async () => {
     const res = await fetch(BASE_URL);
     products = await res.json();
     displayProducts(products);
+    if (products.length > 0) loader.classList.add('loader-hidden');
   } catch (err) {
     console.error(err);
   }
 };
 
 getProducts();
-endLoading();
 
 // hamburger menu
 menuButton.addEventListener('click', () => {
@@ -44,19 +45,6 @@ const displayProducts = products => {
     .join('');
   mainContainer.innerHTML = htmlString;
 };
-
-// loader
-function endLoading() {
-  window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-
-    loader.classList.add('loader-hidden');
-
-    // loader.addEventListener('transitionend', () => {
-    //   document.body.removeChild(loader);
-    // });
-  });
-}
 
 // Get the current year for footer
 const year = document.querySelector('#currentYear');
