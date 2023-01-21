@@ -360,4 +360,8 @@ footer {
   .header-container--left input {
     width: 100%;
   }
+
+  .header-container--left input::placeholder {
+    font-size: 12px;
+  }
 }
