@@ -4,12 +4,14 @@ const mainContainer = document.querySelector('.main-container');
 const menuButton = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-nav');
 const loader = document.querySelector('.loader');
+const searchBar = document.querySelector('#searchBar');
 
 // getting products
 const getProducts = async () => {
   try {
     const res = await fetch(BASE_URL);
     products = await res.json();
+    console.log(products);
     displayProducts(products);
     if (products.length > 0) loader.classList.add('loader-hidden');
   } catch (err) {
@@ -45,6 +47,17 @@ const displayProducts = products => {
     .join('');
   mainContainer.innerHTML = htmlString;
 };
+
+// searchBar
+searchBar.addEventListener('keyup', e => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredProducts = products.filter(product => {
+    return product.category.toLowerCase().includes(searchString);
+  });
+
+  displayProducts(filteredProducts);
+});
 
 // Get the current year for footer
 const year = document.querySelector('#currentYear');
