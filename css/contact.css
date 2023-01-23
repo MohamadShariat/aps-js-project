@@ -60,6 +60,7 @@ body {
   color: var(--first-color);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   opacity: 0.5;
+  resize: none;
 }
 
 .contact-form button {
